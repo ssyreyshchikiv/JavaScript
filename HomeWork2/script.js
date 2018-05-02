@@ -3,9 +3,9 @@
 // 1. Перераспределить значения переменных 
 // X и Y так, чтобы в X оказалось меньшее 
 // из этих значений, а в Y — большее.
-
-/*var x = parseInt(prompt("Введите первое число"));
-var y = parseInt(prompt("Введите второе число"));
+/*
+var x = prompt("Введите первое число");
+var y = prompt("Введите второе число");
 var n;
 if (x > y) {
 	n = y;
@@ -20,8 +20,8 @@ if (x > y) {
 	alert("Числа равны");
 } else {
 	alert("Попробуйте еще раз.");
-};*/
-
+};
+*/
 // 2. Есть три вершины a, b и с. У каждой 
 // вершина заданы координатами x, y, z как 
 // целые числа. Нужно определить - является 
@@ -95,44 +95,44 @@ if (ab > bc && ab > ac) {
 // ("зима", "весна" и т.д.). 
 
 /*
-var month = prompt("Введите название месяца").toLowerCase();
+var month = parseInt(prompt("Введите номер месяца от 1 до 12"));
 
 
 switch (month) {
-	case 'январь' :
+	case '1' :
 		alert("Зима");
 		break;
-	case 'февраль' :
+	case '2' :
 		alert("Зима");
 		break;	
-	case 'март' :
+	case '3' :
 		alert("Весна");
 		break;	
-	case 'апрель' :
+	case '4' :
 		alert("Весна");
 		break;
-	case 'май' :
+	case '5' :
 		alert("Весна");
 		break;
-	case 'июнь' :
+	case '6' :
 		alert("Лето");
 		break;
-	case 'июль' :
+	case '7' :
 		alert("Лето");
 		break;		
-	case 'август' :
+	case '8' :
 		alert("Лето");
 		break;		
-	case 'сентябрь' :
+	case '9' :
 		alert("Осень");
 		break;		
-	case 'октябрь' :
+	case '10' :
 		alert("Осень");
 		break;	
-	case 'ноябрь' :
+	case '11' :
 		alert("Осень");
 		break;	
-	case 'декабрь' :
+	case '12' :
 		alert("Зима");
 		break;	
 	default :
@@ -161,19 +161,19 @@ var lgth = parseInt(prompt("Введите длину"));
 
 switch (number) {
 	case 1 :
-		alert(lgth * 10 + " дм");
+		alert(lgth / 10 + " м");
 		break;
 	case 2 :
-		alert(lgth / 1000 + " километр");
+		alert(lgth * 1000 + " м");
 		break;
 	case 1 :
 		alert(lgth  + " м");
 		break;
 	case 1 :
-		alert(lgth * 1000 + " мм");
+		alert(lgth / 1000 + " м");
 		break;
 	case 1 :
-		alert(lgth * 100 + " см");
+		alert(lgth / 100 + " м");
 		break;
 	default:
 		alert("Попробуйте еще раз");
@@ -232,18 +232,21 @@ if (year % 4 === 0 && year % 100 !== 0) {
 // 3) если мы помыли все тарелки и моющее средство закончилось, 
 // то вывести: 'Все тарелки вымыты, моющее средство закончилось'
 
+
 var numberOfPlates = parseInt(prompt("Введите количество тарелок"));
 var amountOfDetergent = parseFloat(prompt("Введите количество средства"));
 
 
 while (true) {
-	numberOfPlates -= 1;
-	amountOfDetergent -= 0.5;
+	
 
 	if (isNaN(numberOfPlates) || isNaN(amountOfDetergent) || numberOfPlates < 0 || amountOfDetergent < 0) {
         alert("Чего-то не хватает!");
         break;
     }
+
+    numberOfPlates -= 1;
+	amountOfDetergent -= 0.5;
 
 	if (numberOfPlates === 0 && amountOfDetergent === 0) {
 		alert("Все тарелки вымыты, моющее средство закончилось");
@@ -251,7 +254,7 @@ while (true) {
 	}
 
 	if (numberOfPlates === 0) {
-		alert("Все тарелки вымыты. Осталось " + amountOfDetergent + " ед. моющего средства");
+		alert("Все тарелки вымыты. Осталось " + amountOfDetergent.toFixed(2) + " ед. моющего средства");
 		break;
 	} 
 

@@ -93,53 +93,53 @@ if (ab > bc && ab > ac) {
 // 2 — февраль, ...). Вывести название 
 // соответствующего времени года 
 // ("зима", "весна" и т.д.). 
-
 /*
+
 var month = parseInt(prompt("Введите номер месяца от 1 до 12"));
 
 
 switch (month) {
-	case '1' :
+	case 1 :
 		alert("Зима");
 		break;
-	case '2' :
+	case 2 :
 		alert("Зима");
 		break;	
-	case '3' :
+	case 3 :
 		alert("Весна");
 		break;	
-	case '4' :
+	case 4 :
 		alert("Весна");
 		break;
-	case '5' :
+	case 5 :
 		alert("Весна");
 		break;
-	case '6' :
+	case 6 :
 		alert("Лето");
 		break;
-	case '7' :
+	case 7 :
 		alert("Лето");
 		break;		
-	case '8' :
+	case 8 :
 		alert("Лето");
 		break;		
-	case '9' :
+	case 9 :
 		alert("Осень");
 		break;		
-	case '10' :
+	case 10 :
 		alert("Осень");
 		break;	
-	case '11' :
+	case 11 :
 		alert("Осень");
 		break;	
-	case '12' :
+	case 12 :
 		alert("Зима");
 		break;	
 	default :
 		alert("Попробуйте еще раз");	
 }
-*/
 
+*/
 
 // 4. Единицы длины пронумерованы следующим 
 // образом: 
@@ -235,7 +235,7 @@ if (year % 4 === 0 && year % 100 !== 0) {
 
 var numberOfPlates = parseInt(prompt("Введите количество тарелок"));
 var amountOfDetergent = parseFloat(prompt("Введите количество средства"));
-
+var clearOfPlates = 0;
 
 while (true) {
 	
@@ -247,6 +247,7 @@ while (true) {
 
     numberOfPlates -= 1;
 	amountOfDetergent -= 0.5;
+	clearOfPlates ++;
 
 	if (numberOfPlates === 0 && amountOfDetergent === 0) {
 		alert("Все тарелки вымыты, моющее средство закончилось");
@@ -262,4 +263,8 @@ while (true) {
 		alert("Моющее средство закончилось. Осталось " + numberOfPlates + " тарелок");
 		break;
 	} 
+	if (amountOfDetergent < 0.5) {
+		alert("Помыто " + clearOfPlates + " тарелок. Осталось " + amountOfDetergent.toFixed(2) + " моющего средства." )
+		break;
+	}
 }

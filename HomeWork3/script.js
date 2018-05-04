@@ -55,7 +55,7 @@ var password = prompt("Введите пароль");
 
 if (password.length < 9) {
 	alert("Пароль должен быть не меньше 9 символов");
-} else if (password.match(/[a-zA-Z]/g) === null) {
+} else if (password.match(/(?=.*[a-z])(?=.*[A-Z])/g) === null) {
 	alert("Должны быть латинские буквы");
 } else if (password.match(/(.*\d){3}/g) === null) {
 	alert("Должно быть больше двух цифр");

@@ -44,7 +44,6 @@ console.log(A);
 
 /*
 var arr = [ 1, null, 0, null, 1, null, null, null, null ];
-var rowCount = 3;
 var container = `<table>
 		<tbody>
 		<tr>`;

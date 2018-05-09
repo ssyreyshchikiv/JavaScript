@@ -42,54 +42,63 @@ console.log(A);
 <td>4</td><td>8</td></tr></tbody></table>`
 */
 
-/*
+
 var arr = [ 1, null, 0, null, 1, null, null, null, null ];
 var container = `<table>
 		<tbody>
 		<tr>`;
 var i = 0;
-while(i < arr.length && i < 3) {
+while(i < arr.length) {
 	if(arr[i] === 1) {
 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
+		if((i % 3) === 2 && i !== (arr.length - 1)) {
+			container += `</tr><tr>`;
+		}
 	} else if (arr[i] === null) {
 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;"></td>`;
+		if((i % 3) === 2 && i !== (arr.length - 1)) {
+			container += `</tr><tr>`;
+		}
 	} else if (arr[i] === 0) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;	
+		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
+		if((i % 3) === 2 && i !== (arr.length - 1)) {
+			container += `</tr><tr>`;
+		}	
 	}else {
 		continue;
 	}
 	i++;
 }
-container += `</tr><tr>`;
-while(i < arr.length && i < 6 && i > 2) {
-	if(arr[i] === 1) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
-	} else if (arr[i] === null) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;"></td>`;
-	} else if (arr[i] === 0) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;	
-	}else {
-		continue;
-	}
-	i++;
-}
-container += `</tr><tr>`;
-while(i < arr.length && i <= 8 && i > 5) {
-	if(arr[i] === 1) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
-	} else if (arr[i] === null) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;"></td>`;
-	} else if (arr[i] === 0) {
-		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;	
-	}else {
-		continue;
-	}
-	i++;
-}
+// container += `</tr><tr>`;
+// while(i < arr.length && i < 6 && i > 2) {
+// 	if(arr[i] === 1) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
+// 	} else if (arr[i] === null) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;"></td>`;
+// 	} else if (arr[i] === 0) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;	
+// 	}else {
+// 		continue;
+// 	}
+// 	i++;
+// }
+// container += `</tr><tr>`;
+// while(i < arr.length && i <= 8 && i > 5) {
+// 	if(arr[i] === 1) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;
+// 	} else if (arr[i] === null) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;"></td>`;
+// 	} else if (arr[i] === 0) {
+// 		container += `<td style = "width: 25px; height: 25px; border: 1px solid black; text-align: center;">${arr[i]}</td>`;	
+// 	}else {
+// 		continue;
+// 	}
+// 	i++;
+// }
 
 container += `</tr></tbody></table>`;
 document.write(container);
-*/
+
 
 // 3.
 // Задан массив  - [12,4,3,10,1,20]. 
@@ -113,7 +122,7 @@ console.log(arr);
 // Снабдите комментариями каждую строку.
 
 // Quicksort
-
+/*
 var arr = [12,4,3,10,1,20];
 
 // Пишем функцию, котора бдует принимать наш массив
@@ -155,3 +164,4 @@ var qsort = function(arr) {
 };
 
 console.log(qsort(arr));
+*/

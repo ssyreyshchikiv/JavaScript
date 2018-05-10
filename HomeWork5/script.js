@@ -16,14 +16,14 @@ var obj = {
 };
 
 function objKey (object) {
-	for(key in obj) {
-		if(typeof obj[key] === "object" && obj[key] instanceof Object) {
-				var subobj = obj[key];
+	for(key in object) {
+		if(typeof object[key] === "object" && object[key] instanceof Object) {
+				var subobj = object[key];
 				for(var key2 in subobj){
 					console.log(key + " : "  + subobj[key2]);
 			}
 		} else {
-			console.log(key + " : " + obj[key]);
+			console.log(key + " : " + object[key]);
 		}
 	}
 	
@@ -39,17 +39,27 @@ objKey(obj);
 // (неповторяющиеся) элементы. 
 // Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].
 /*
-var A = [1, 2];
-var B = [2, 3];
+var A = [1, 2, 5];
+var B = [2, 2, 3, 7];
 var C = A.concat(B);
+// var C = [];
 
-i = C.length;
-while (i--) {
-    if (C[i] === C[i - 1]) {
-        C.splice(i, 1);
-    }
+// i = C.length;
+// while (i--) {
+//     if (C[i] === C[i - 1]) {
+//         C.splice(i, 1);
+//     }
+// }
+
+for (i = 0; i < C.length; i++) {
+	for (j = i + 1; j < (C.length + 1); j++) {
+		if (C[i] === C[j]) {
+			C.splice(i, 1);
+		} else {
+			continue;
+		}
+	}
 }
-
 
 console.log(C);
 */
@@ -63,22 +73,29 @@ console.log(C);
 // Про числа Фибоначчи: https://ru.wikipedia.org/wiki/Числа_Фибоначчи
 
 
-/*
+
 function fibo(num) {
 	var a = 1;
 	var b = 1;
 	var fibo = [a, b];
-	for (var i = 3; i <= num; i++) {
+	if (num === 0) {
+		return 0;
+	} else if (num === 1) {
+		return 1;
+	} else  {
+		for (var i = 3; i <= num; i++) {
 		var c = a + b;
 		a = b;
 		b = c;
 		fibo.push(b);
 	}
 	return fibo;
+	}
+	
 }
 
 console.log(fibo(8));
-*/
+
 
 // 4** Напишите функцию counter, которая возвращает количество дней, 
 // часов и минут до нового года. Датой наступления нового года считается 
@@ -86,7 +103,7 @@ console.log(fibo(8));
 // Нужно реализовать корректные окончания слов, например: 1 день, 2 дня, 
 // 5 дней. Функция должна корректно работать при запуске в любом году, 
 // т. е. грядущий год должен вычисляться программно. 
-
+/*
 function daysLeftNewYear() { 
 	var today = new Date();
  //  Задаем дату следующего нового года
@@ -192,3 +209,4 @@ function daysLeftNewYear() {
 }
 
 daysLeftNewYear();
+*/

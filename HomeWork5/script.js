@@ -38,23 +38,17 @@ objKey(obj);
 // в один массив C так, чтобы в массиве остались уникальные 
 // (неповторяющиеся) элементы. 
 // Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].
-/*
-var A = [1, 2, 5];
+
+var A = [1, 2, 2, 2];
 var B = [2, 2, 3, 7];
 var C = A.concat(B);
-// var C = [];
 
-// i = C.length;
-// while (i--) {
-//     if (C[i] === C[i - 1]) {
-//         C.splice(i, 1);
-//     }
-// }
 
 for (i = 0; i < C.length; i++) {
-	for (j = i + 1; j < (C.length + 1); j++) {
+	for (j = i + 1; j < C.length; j++) {
 		if (C[i] === C[j]) {
 			C.splice(i, 1);
+			j--;
 		} else {
 			continue;
 		}
@@ -62,7 +56,7 @@ for (i = 0; i < C.length; i++) {
 }
 
 console.log(C);
-*/
+
 
 // Функции:
 
@@ -73,7 +67,7 @@ console.log(C);
 // Про числа Фибоначчи: https://ru.wikipedia.org/wiki/Числа_Фибоначчи
 
 
-
+/*
 function fibo(num) {
 	var a = 1;
 	var b = 1;
@@ -95,7 +89,7 @@ function fibo(num) {
 }
 
 console.log(fibo(8));
-
+*/
 
 // 4** Напишите функцию counter, которая возвращает количество дней, 
 // часов и минут до нового года. Датой наступления нового года считается 

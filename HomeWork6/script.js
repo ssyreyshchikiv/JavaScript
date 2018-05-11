@@ -48,7 +48,7 @@ for (i = 0; i < C.length; i++) {
 	for (j = i + 1; j < C.length; j++) {
 		if (C[i] === C[j]) {
 			C.splice(i, 1);
-			i--;
+			j--;
 		} else {
 			continue;
 		}

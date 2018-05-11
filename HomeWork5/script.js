@@ -38,12 +38,12 @@ objKey(obj);
 // в один массив C так, чтобы в массиве остались уникальные 
 // (неповторяющиеся) элементы. 
 // Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].
-
-var A = [1, 2, 2, 2];
-var B = [2, 2, 3, 7];
+/*
+var A = [1, 1, 2, 2, 2];
+var B = [3, 2, 3, 7];
 var C = A.concat(B);
-
-
+*/
+/*
 for (i = 0; i < C.length; i++) {
 	for (j = i + 1; j < C.length; j++) {
 		if (C[i] === C[j]) {
@@ -56,7 +56,25 @@ for (i = 0; i < C.length; i++) {
 }
 
 console.log(C);
+*/
 
+var A = [1, 1, undefined, 2, undefined];
+var B = [3, undefined];
+var AB = A.concat(B);
+var C = [];
+
+next:
+for (i = 0; i < AB.length; i++) {
+	for (j = 0; j < C.length; j++) {
+		if (AB[i] === C[j]) {
+			continue next;
+		} 
+	}
+	
+	C.push(AB[i]);
+}
+
+console.log(C);
 
 // Функции:
 

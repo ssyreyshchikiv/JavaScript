@@ -45,7 +45,7 @@ console.log(fakt(7));
 // от 1 до 100, но так, чтобы оно не повторялось, пока не будут перебраны все 
 // числа из этого промежутка. Решите задачу через замыкания - в замыкании должен 
 // хранится массив чисел, которые уже были сгенерированы функцией.  
-
+/*
 function getRand1_100 (x, y) {
 
 	var arr = [];
@@ -65,6 +65,29 @@ function getRand1_100 (x, y) {
 		}	
 		
 	}
+	return console.log(arr);
+}
+
+var random = getRand1_100(1, 100);
+console.log(random());
+*/
+
+function getRand1_100 (x, y) {
+
+	var arr = [];
+	
+	return function() {
+		var rand;
+		while (true) {
+			var rand = Math.floor(Math.random() * y + x);
+			if (arr.indexOf(rand) === -1) {
+                arr.push(rand);
+                return rand;
+            } 
+		}	
+		
+	}
+	return console.log(arr);
 }
 
 var random = getRand1_100(1, 100);

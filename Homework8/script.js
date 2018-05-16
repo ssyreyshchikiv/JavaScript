@@ -52,7 +52,7 @@ setInterval(clock, 1000);*/
 // объекта о данном товаре. Дизайн оформления 
 // информации в html о товаре – 
 // это ваше творчество.
-/*
+
 var article = {
     name: "car",
     image: "img/cars.jpg",
@@ -60,12 +60,12 @@ var article = {
     power: "300HP",
     year: "2018",
     price: "250000$",
-    vis: function() {
-        document.getElementById("car").style.width = "300px";
+    vis: function(ident) {
+        document.getElementById(ident).style.width = "300px";
         var img = document.createElement("img");
         img.src = this.image;
         img.style.width = "100%";
-        document.getElementById("car").appendChild(img);
+        document.getElementById(ident).appendChild(img);
         spanAdd(this.name);
         spanAdd(this.color);
         spanAdd(this.power);
@@ -77,13 +77,13 @@ var article = {
 	        var span = document.createElement('span');
 	        span.innerText = objElem;
 	        span.style.display = "block";
-	        document.getElementById("car").appendChild(span);
+	        document.getElementById(ident).appendChild(span);
         }
     }
 
 }
-article.vis();*/
+article.vis("car");
 
-3. Создать светофор (красный, желтый, 
-зелёный). Переключать цвет у светофора 
-через каждые 2 сек сверху вниз и снизу вверх. 
+// 3. Создать светофор (красный, желтый, 
+// зелёный). Переключать цвет у светофора 
+// через каждые 2 сек сверху вниз и снизу вверх. 

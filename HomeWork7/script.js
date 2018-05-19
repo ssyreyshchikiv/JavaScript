@@ -71,7 +71,7 @@ QUnit.test( "testfals()", function( assert ) {
 // - поиск максимально элемента в переданном массиве;
 // - расчет среднего арифметического значения элементов переданного массива;
 // - создание копии (клонирование) переданного массива.
-
+/*
 var myLib = function(){
 	var myObj = {};
 	
@@ -108,4 +108,51 @@ var lib = myLib();
 console.log(lib.min([1, 2, -1, 3, 4, 5]));
 console.log(lib.max([1, 2, -1, 3, 4, 5]));
 console.log(lib.mean([1, 2, -1, 3, 4, 5]));
-console.log(lib.clone([1, 2, -1, 3, 4, 5]));
+*/
+
+
+// 4** Написать кодер для шифра Цезаря (https://ru.wikipedia.org/wiki/Шифр_Цезаря). 
+// На вход принимается строка и сдвиг (число). На выход - зашифрованное/расшифрованное сообщение.
+// Пример работы шифра Цезаря можно увидеть здесь: https://planetcalc.com/1434/
+// Примеры данных для тестирования:
+// 1) Зашифрованное сообщение: 
+// "Gur pyrnare naq avpre gur cebtenz, gur snfgre vg'f tbvat gb eha. Naq vs vg qbrfa'g, vg'yy or rnfl gb znxr vg snfg." 
+// Сдвиг: -13. 
+// Расшифрованное сообщение: 
+// "The cleaner and nicer the program, the faster it's going to run. And if it doesn't, it'll be easy to make it fast."
+// 2) Исходное сообщение: 
+// "There is no programming language, no matter how structured, that will prevent programmers from making bad programs.’ 
+// Сдвиг: 25. 
+// Зашифрованное сообщение: "Sgdqd hr mn oqnfqzllhmf kzmftzfd, mn lzssdq gnv rsqtbstqdc, sgzs vhkk oqdudms oqnfqzlldqr eqnl lzjhmf azc oqnfqzlr."
+var string = "There is no programming language, no matter how structured, that will prevent programmers from making bad programs.";
+var offset = 25; 
+
+function cipher (str, offs) {
+	var out = "";
+	offs %= 26;
+	for (var i = 0; i < str.length; i++) {
+		var code = str.charCodeAt(i);
+		
+		if (code >= 65 && code <= 90) {
+			code = code + offs;
+			if(code < 65) {
+				code += 26;
+			}
+
+			out += String.fromCharCode(( code - 65) % 26 + 65);
+
+		} else if(code >= 97 && code <= 122) {
+			code = code + offs;
+			if (code < 97) {
+				code += 26;
+			}
+
+			out += String.fromCharCode(( code - 97) % 26 + 97);
+
+		} else out += str[i];
+	    
+		}
+	console.log(out);
+}
+
+cipher(string, offset);

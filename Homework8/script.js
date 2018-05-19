@@ -52,7 +52,7 @@ setInterval(clock, 1000);*/
 // объекта о данном товаре. Дизайн оформления 
 // информации в html о товаре – 
 // это ваше творчество.
-
+/*
 var article = {
     name: "car",
     image: "img/cars.jpg",
@@ -82,8 +82,72 @@ var article = {
     }
 
 }
-article.vis("car");
+article.vis("car");*/
 
 // 3. Создать светофор (красный, желтый, 
 // зелёный). Переключать цвет у светофора 
 // через каждые 2 сек сверху вниз и снизу вверх. 
+
+
+var red = document.querySelector('.red');
+var yellow = document.querySelector('.yellow');
+var green = document.querySelector('.green');
+
+red.classList.add('redblock');
+
+
+	function changeColorRedYellow() {
+	red.classList.remove('redblock');
+	yellow.classList.add('yellowblock');
+	};
+
+
+	function changeColorYellowGreen() {
+		yellow.classList.remove('yellowblock');
+		green.classList.add('greenblock');
+	};
+
+
+	function changeColorGreenYellow() {
+		green.classList.remove('greenblock');
+		yellow.classList.add('yellowblock');
+	};
+
+	function changeColorYellowRed() {
+		yellow.classList.remove('yellowblock');
+		red.classList.add('redblock');
+	};
+
+	setTimeout(changeColorRedYellow, 2000);
+	setTimeout(changeColorYellowGreen, 4000);
+	setTimeout(changeColorGreenYellow, 6000);
+	setTimeout(changeColorYellowRed, 8000);
+
+function intChange () {
+	setTimeout(changeColorRedYellow, 2000);
+	setTimeout(changeColorYellowGreen, 4000);
+	setTimeout(changeColorGreenYellow, 6000);
+	setTimeout(changeColorYellowRed, 8000);
+}
+
+setInterval(intChange, 8000);
+
+// // функция запуска запрещающего цикла светофора (красный и желтый)
+// function RedInterval (){
+//   var redInterval =  setInterval(function(){
+// // светофор стартует из состояния “движение запрещено”:при этом горит красный сигнал светофора, 
+//    green.classList.remove('greenblock');
+//    red.classList.add('redblock');
+//    yellow.classList.add('redtext');
+// // в центре горит красное табло с обратным отсчетом до переключения в след. состояние    
+//    yellow.innerHTML = counters.red--;
+// // по истечению таймера, когда остаются последние 3 секунды, табло с таймером исчезает, и на его месте включается желтый сигнал светофора, который горит эти последние 3 секунды, и далее светофор переходит в состояние “движение разрешено”
+//    if (counters.red <= 2){
+//      yellow.innerHTML = "";
+//      yellow.classList.add('yellowblock');
+//    };
+//    if (counters.red == 0) {
+//     clearTimeout(redInterval);
+//     };
+//   }, 1000);};
+

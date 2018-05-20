@@ -135,18 +135,10 @@ function cipher (str, offs) {
 		
 		if (code >= 65 && code <= 90) {
 			code = code + offs;
-			if(code < 65) {
-				code += 26;
-			}
-
 			out += String.fromCharCode(( code - 65) % 26 + 65);
 
 		} else if(code >= 97 && code <= 122) {
 			code = code + offs;
-			if (code < 97) {
-				code += 26;
-			}
-
 			out += String.fromCharCode(( code - 97) % 26 + 97);
 
 		} else out += str[i];

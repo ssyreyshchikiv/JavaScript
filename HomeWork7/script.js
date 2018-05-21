@@ -124,8 +124,8 @@ console.log(lib.mean([1, 2, -1, 3, 4, 5]));
 // "There is no programming language, no matter how structured, that will prevent programmers from making bad programs.’ 
 // Сдвиг: 25. 
 // Зашифрованное сообщение: "Sgdqd hr mn oqnfqzllhmf kzmftzfd, mn lzssdq gnv rsqtbstqdc, sgzs vhkk oqdudms oqnfqzlldqr eqnl lzjhmf azc oqnfqzlr."
-var string = "There is no programming language, no matter how structured, that will prevent programmers from making bad programs.";
-var offset = 25; 
+var string = "Gur pyrnare naq avpre gur cebtenz, gur snfgre vg'f tbvat gb eha. Naq vs vg qbrfa'g, vg'yy or rnfl gb znxr vg snfg.";
+var offset = -13; 
 
 function cipher (str, offs) {
 	var out = "";
@@ -135,10 +135,16 @@ function cipher (str, offs) {
 		
 		if (code >= 65 && code <= 90) {
 			code = code + offs;
+			if (code < 65) {
+				code +=26;
+			}
 			out += String.fromCharCode(( code - 65) % 26 + 65);
 
 		} else if(code >= 97 && code <= 122) {
 			code = code + offs;
+			if (code < 97) {
+				code +=26;
+			}
 			out += String.fromCharCode(( code - 97) % 26 + 97);
 
 		} else out += str[i];

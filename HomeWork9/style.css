@@ -77,9 +77,7 @@ list-style: none;
 		clear: left;
 		width: 681px;
 		}
-		.on {
-		display: none;
-		}
+		
 		#keyboard li:hover {
 		position: relative;
 		top: 1px;

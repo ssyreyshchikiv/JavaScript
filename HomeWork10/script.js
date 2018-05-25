@@ -9,41 +9,46 @@
 // - Добавить товар;
 // - Вернуть сумму товара;
 // - Вернуть количество товара.
-/*
+
 function Article(name, price) {
 	this.name = name,
 	this.price = price
 };
 
 function ShoppingCart() {
-	var _product = [];
-	var _amount = 0;
-	var _productSum = 0;
+	this._product = [];
+	this._amount = 0;
+	this._productSum = 0;
 
-	this.addProduct = function(name, price) {
-		Article.call(this, name, price);
-		_product[this.name] = this.price;
-		_amount++;
-		_productSum += this.price;
+	this.addProduct = function(newP) {
+		this._product.push(newP);
+		this._amount++;
+		this._productSum += newP.price;
 	}
 
 	this.getReturnSum = function() {
-		return _productSum;
+		return this._productSum;
 	}
 
 	this.getAmount = function() {
-		return _amount;
+		return this._amount;
 	}
 }
 
-var prod = new ShoppingCart();
-prod.addProduct("phone", 100);
-prod.addProduct("tv", 150);
-prod.addProduct("audio", 75);
+var prod = new Article("phone", 100);
+var prod2 = new Article("tv", 150);
+var prod3 = new Article("audio", 75);
 
-console.log(prod.getReturnSum());
-console.log(prod.getAmount());
-*/
+var cart = new ShoppingCart();
+
+cart.addProduct(prod);
+cart.addProduct(prod2);
+cart.addProduct(prod3);
+
+console.log(cart._product);
+console.log(cart.getReturnSum());
+console.log(cart.getAmount());
+
 
 /*2. Создать шаблон объектов «Человек».
 Свойства «Имя», «Возраст», «Пол», «Интересы».
@@ -92,35 +97,31 @@ alert(stud.toString());
 //  в качества имя пользователя устанавливает «Аноним».
 // - «Создать пользователя из данных» в качества аргументов 
 // получает объект с именем и возрастом пользователя.
-
+/*
 function User(name) {
-	this.name = name;
-	this.toString = function(){
-		return 'Моё имя ' + this.name;
+	this.say = function(){
+		console.log('Моё имя ' + this.name);
 	}	
 };
 
-function UserAnon() {
-	User.call(this);
-	this.toString = function(){
-		return "Аноним";
-	}
+User.anon = function UserAnon() {
+	var user = new User;
+	user.name = "Аноним";
+	return user;
 };
 
-function UserSetArg(name, age) {
-	User.call(this, name, age);
-	this.name = name;
-	this.age = age;
-	this.toString = function(){
-		return 'Моё имя ' + this.name + ', ' + this.age;
-	}
+User.userSetar = function UserSetArg(userData) {
+	var user = new User;
+	user.name = userData.name;
+	user.age = userData.age;
+	return user;
 };
 
-var user = new User("Иван");
-alert(user.toString());
+var user1 = User.anon();
+user1.say();
 
-var anon = new UserAnon();
-alert(anon.toString());
-
-var userSetArg = new UserSetArg("Петр", 20);
-alert(userSetArg.toString());
+var user2 = User.userSetar({
+  name: "Иван",
+  age: 20
+});
+user2.say();*/

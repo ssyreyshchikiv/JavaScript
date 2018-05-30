@@ -1,0 +1,326 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.container {
+	position: relative;
+	height: 100%;
+	background-color: #3cbcfc;
+
+}
+
+/*.sprites {
+	background-image: url("img/sprites.png");
+	background-repeat: no-repeat;
+	background-position: 9999px 9999px;	
+}*/
+
+* {
+	cursor: url("img/cursor/aim.png"), crosshair;
+}
+
+.foot {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 600px;
+	background: url("img/foot/foot.png") 0 0 repeat-x;
+	
+}
+
+.dog {
+	position: absolute;
+	/*background: url("img/sniff/0.png");*/
+	left: 0;
+	bottom: 0;
+	width: 120px;
+	height: 122px;
+	transform: translate(0px, 0px);
+}
+
+.dog_walk {
+	transition: transform 8s linear;
+	animation-name: dog-walk;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	/*задаем ступенчатую можно попробовать //linear*/
+	animation-timing-function: steps(1, end); 
+	animation-delay: 0;
+}
+
+.dog_sniff {
+	transition: transform 8s linear;
+	animation-name: dog-sniff;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	/*задаем ступенчатую можно попробовать //linear*/
+	animation-timing-function: steps(1, end); 
+	animation-delay: 0;
+}
+
+.dog_jump {
+	width: 120px;
+	height: 122px;
+	transition: transform 8s linear;
+	animation-name: dog-jump;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	/*задаем ступенчатую можно попробовать //linear*/
+	animation-timing-function: steps(1, end); 
+	animation-delay: 0;
+}
+
+
+@keyframes dog-walk {
+	0% {
+		background: url("img/sniff/1.png");
+	}
+
+	8.33% {
+		background: url("img/sniff/2.png");
+	}
+
+	16.66% {
+		background: url("img/sniff/3.png");
+	}
+
+	25% {
+		background: url("img/sniff/4.png");
+	}
+
+	33.23% {
+		background: url("img/sniff/1.png");
+	}
+
+	41.65% {
+		background: url("img/sniff/2.png");
+	}
+
+	50% {
+		background: url("img/sniff/3.png");
+	}
+
+	58.31% {
+		background: url("img/sniff/4.png");
+	}
+
+	66.64% {
+		background: url("img/sniff/1.png");
+	}
+
+	75% {
+		background: url("img/sniff/2.png");
+	}
+
+	83.3% {
+		background: url("img/sniff/3.png");
+	}
+
+	91.63% {
+		background: url("img/sniff/4.png");
+	}
+
+	100% {
+		background: url("img/sniff/1.png");
+	}
+
+}
+
+@keyframes dog-sniff{
+	0% {
+		background: url("img/sniff/0.png");
+	}
+
+	50% {
+		background: url("img/sniff/1.png");
+	}
+
+	100% {
+		background: url("img/sniff/0.png");
+	}
+
+}
+
+@keyframes dog-jump {
+	0% {
+		background: url("img/jump/0.png");
+	}
+
+	50% {
+		bottom: 50px;
+		background: url("img/jump/1.png");
+	}
+
+	100% {
+		
+		background: url("img/jump/2.png");
+	}
+
+}
+
+.duck {
+	position: absolute;
+	bottom: 115px;
+	left: 0;
+	display: none;
+	/*transition: transform 3s linear;*/
+}
+
+.duck_fly {
+	display: block;
+	background: url("img/duck/black/left/0.png");
+}
+
+.duck_fly_left, .duck_fly_top_left, .duck_fly_right, .duck_fly_top_right {
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(1, end); 
+	animation-delay: 0;
+}
+
+.duck_fly_left {
+	animation-name: duck-fly-left;
+}
+
+.duck_fly_top_left {
+	animation-name: duck-fly-top-left;
+}
+
+.duck_fly_right {
+	animation-name: duck-fly-right;
+}
+
+.duck_fly_top_right {
+	animation-name: duck-fly-top-right;
+}
+
+@keyframes duck-fly-left {
+	0% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/left/0.png");
+	}
+
+	25% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/left/1.png");
+	}
+
+	50% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/left/2.png");
+	}
+
+	75% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/left/1.png");
+	}
+
+	100% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/left/0.png");
+	}
+}
+
+@keyframes duck-fly-top-left {
+	0% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-left/0.png");
+	}
+
+	25% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-left/1.png");
+	}
+
+	50% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-left/2.png");
+	}
+
+	75% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-left/1.png");
+	}
+
+	100% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-left/0.png");
+	}
+}
+
+@keyframes duck-fly-right {
+	0% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/right/0.png");
+	}
+
+	25% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/right/1.png");
+	}
+
+	50% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/right/2.png");
+	}
+
+	75% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/right/1.png");
+	}
+
+	100% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/right/0.png");
+	}
+}
+
+
+@keyframes duck-fly-top-right {
+	0% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-right/0.png");
+	}
+
+	25% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-right/1.png");
+	}
+
+	50% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-right/2.png");
+	}
+
+	75% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-right/1.png");
+	}
+
+	100% {
+		width: 75px;
+		height: 75px;
+		background: url("img/duck/black/top-right/0.png");
+	}
+}

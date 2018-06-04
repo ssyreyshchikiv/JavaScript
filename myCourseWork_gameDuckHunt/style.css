@@ -209,7 +209,7 @@ html, body {
 	animation-delay: 0;
 }
 
-.duck_dead {
+/*.duck_dead {
 	display: block;
 	transition: transform 8s linear;
 	animation-name: duck-dead;
@@ -218,7 +218,7 @@ html, body {
 	/*задаем ступенчатую можно попробовать //linear*/
 	animation-timing-function: steps(1, end); 
 	animation-delay: 0;
-}
+}*/
 
 @keyframes duck-fly-left {
 	0% {
@@ -364,7 +364,7 @@ html, body {
 
 }
 
-@keyframes duck-dead {
+/*@keyframes duck-dead {
 	0% {
 		width: 75px;
 		height: 75px;
@@ -383,13 +383,7 @@ html, body {
 		background: url("img/duck/black/dead/2.png");
 
 	}
-}
-
-
-
-
-
-
+}*/
 
 
 button {

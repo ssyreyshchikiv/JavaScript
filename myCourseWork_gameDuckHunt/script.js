@@ -139,9 +139,9 @@ function gameStart() {
 	duck.classList.add("duck_fly");
 	duck.classList.add("duck_shot");
 	clearInterval(timerId);
-	clearInterval(timerId2);
-	clearInterval(timerId3);
-	clearInterval(timerId4);
+	clearTimeout(timerId2);
+	clearTimeout(timerId3);
+	clearTimeout(timerId4);
 	setTimeout(duckDie, 200);
 };
 

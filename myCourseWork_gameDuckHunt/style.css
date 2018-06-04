@@ -216,7 +216,7 @@ html, body {
 	animation-duration: .5s;
 	animation-iteration-count: infinite;
 	/*задаем ступенчатую можно попробовать //linear*/
-	animation-timing-function: steps(1, end); 
+/*	animation-timing-function: steps(1, end); 
 	animation-delay: 0;
 }*/
 
